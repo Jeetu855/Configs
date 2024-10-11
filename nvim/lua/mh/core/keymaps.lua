@@ -18,14 +18,16 @@ vim.keymap.set("n", "J", ":m .+1<CR>==", { desc = "move line down", noremap = tr
 vim.keymap.set("n", "K", ":m .-2<CR>==", { desc = "move line up", noremap = true, silent = true })
 
 -- increment or decrement numbers
-keymap.set("n", "<leader>+", "<C-a>", { desc = "increment number" })
-keymap.set("n", "<leader>-", "<C-a>", { desc = "decrement number" })
+keymap.set("n", "<leader>=", "<C-a>", { desc = "increment number" })
+keymap.set("n", "<leader>-", "<C-x>", { desc = "decrement number" })
 
 -- spliting windows
 keymap.set("n", "<leader>ss", ":vsplit<CR>", { desc = "split window vertically" })
 keymap.set("n", "<leader>sh", ":split<CR>", { desc = "split window horizontally" })
 keymap.set("n", "<leader>sv", "<C-w>=", { desc = "make windows equal size" })
 keymap.set("n", "<leader>sl", "<cmd>close<CR>", { desc = "close current split" })
+keymap.set("n", "<Tab>h", "<C-w>h", { desc = "move to left split", noremap = true, silent = true })
+keymap.set("n", "<Tab>l", "<C-w>l", { desc = "move to right split", noremap = true, silent = true })
 
 -- tab management
 keymap.set("n", "<leader>tt", "<cmd>tabnew<CR>", { desc = "open new tab" })
@@ -33,3 +35,9 @@ keymap.set("n", "<leader>tl", "<cmd>tabclose<CR>", { desc = "close current tab" 
 keymap.set("n", "L", "<cmd>tabn<CR>", { desc = "go to next tab" })
 keymap.set("n", "H", "<cmd>tabp<CR>", { desc = "go to prev tab" })
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "open current buffer in new tab" })
+
+-- rebind Shift + L to go to the end of the line ($)
+keymap.set("n", "L", "$", { noremap = true, silent = true, desc = "go to end of line" })
+
+-- rebind Shift + H to go to the beginning of the line (0)
+keymap.set("n", "H", "^", { noremap = true, silent = true, desc = "go to beginning of line" })
