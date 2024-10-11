@@ -9,3 +9,8 @@ caps:escape_shifted_capslock Make Caps Lock an additional Esc, but Shift + Caps 
 ```sh
 setxkbmap -option caps:escape_shifted_capslock
 ```
+
+--- 
+
+#### Lualine 
+For lualine to work, need to comment out the code inside bufferline.lua and noice.lua, they should return an empty lua table
