@@ -100,6 +100,32 @@ return {
 					end,
 				})
 			end,
+			["pyright"] = function()
+				lspconfig["pyright"].setup({
+					capabilities = capabilities, -- for autocompletion support
+					on_attach = function(client, bufnr)
+						-- Add any specific keybindings or configurations for Python if necessary
+						-- Example: Keybinding to format the file with black and isort
+						vim.api.nvim_buf_set_keymap(
+							bufnr,
+							"n",
+							"<leader>f",
+							":lua vim.lsp.buf.formatting()<CR>",
+							{ noremap = true, silent = true }
+						)
+					end,
+					settings = {
+						python = {
+							analysis = {
+								autoSearchPaths = true,
+								useLibraryCodeForTypes = true,
+								diagnosticMode = "workspace",
+								typeCheckingMode = "basic", -- You can change to "off" or "strict" if preferred
+							},
+						},
+					},
+				})
+			end,
 			["graphql"] = function()
 				-- configure graphql language server
 				lspconfig["graphql"].setup({
@@ -120,6 +146,15 @@ return {
 						"scss",
 						"less",
 						"svelte",
+					},
+				})
+			end,
+			["solidity_ls_nomicfoundation"] = function()
+				lspconfig["solidity_ls_nomicfoundation"].setup({
+					capabilities = capabilities,
+					filetypes = { "solidity" }, -- Specify the file types for Solidity
+					settings = {
+						-- Add Solidity-specific settings here (if needed)
 					},
 				})
 			end,

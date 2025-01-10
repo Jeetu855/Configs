@@ -9,6 +9,9 @@ keymap.set("i", "kj", "<Esc>")
 vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>", { noremap = true })
 vim.api.nvim_set_keymap("i", "<C-s>", "<C-o>:write<CR>a", { noremap = true })
 
+-- select all with ctrl-a
+vim.api.nvim_set_keymap("n", "<C-a>", "ggVG", { noremap = true, silent = true, desc = "select all" })
+
 -- for clearing highlight on search
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "clear search highlights" })
 
@@ -26,15 +29,23 @@ keymap.set("n", "<leader>ss", ":vsplit<CR>", { desc = "split window vertically" 
 keymap.set("n", "<leader>sh", ":split<CR>", { desc = "split window horizontally" })
 keymap.set("n", "<leader>sv", "<C-w>=", { desc = "make windows equal size" })
 keymap.set("n", "<leader>sl", "<cmd>close<CR>", { desc = "close current split" })
-keymap.set("n", "<Tab>h", "<C-w>h", { desc = "move to left split", noremap = true, silent = true })
-keymap.set("n", "<Tab>l", "<C-w>l", { desc = "move to right split", noremap = true, silent = true })
+keymap.set("n", "<leader>H", "<C-w>h", { desc = "move to left split", noremap = true, silent = true })
+keymap.set("n", "<leader>L", "<C-w>l", { desc = "move to right split", noremap = true, silent = true })
 
 -- tab management
 keymap.set("n", "<leader>tt", "<cmd>tabnew<CR>", { desc = "open new tab" })
 keymap.set("n", "<leader>tl", "<cmd>tabclose<CR>", { desc = "close current tab" })
-keymap.set("n", "L", "<cmd>tabn<CR>", { desc = "go to next tab" })
-keymap.set("n", "H", "<cmd>tabp<CR>", { desc = "go to prev tab" })
+keymap.set("n", "<tab>l", "<cmd>tabn<CR>", { desc = "go to next tab" })
+keymap.set("n", "<tab>h", "<cmd>tabp<CR>", { desc = "go to previous tab" })
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "open current buffer in new tab" })
+
+-- comment using ctr+ / ---
+vim.keymap.set(
+	"v",
+	"?",
+	":s/^/\\/\\/<CR>:nohl<CR>gv",
+	{ desc = "comment selected lines", noremap = true, silent = true }
+)
 
 -- rebind Shift + L to go to the end of the line ($)
 keymap.set("n", "L", "$", { noremap = true, silent = true, desc = "go to end of line" })
