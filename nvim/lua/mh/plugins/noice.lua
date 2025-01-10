@@ -1,4 +1,5 @@
 return {
+<<<<<<< HEAD
 	--	"folke/noice.nvim",
 	--	event = "VeryLazy",
 	--	opts = {
@@ -12,4 +13,19 @@ return {
 	--		--   If not available, we use `mini` as the fallback
 	--		"rcarriga/nvim-notify",
 	--	},
+=======
+	"folke/noice.nvim",
+	event = "VeryLazy",
+	opts = {
+		-- add any options here
+	},
+	dependencies = {
+		-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+		"MunifTanjim/nui.nvim",
+		-- OPTIONAL:
+		--   `nvim-notify` is only needed, if you want to use the notification view.
+		--   If not available, we use `mini` as the fallback
+		"rcarriga/nvim-notify",
+	},
+>>>>>>> 2c49638f35dba9abaaca042f2060232a24b76d98
 }
