@@ -1,4 +1,4 @@
-#### to enable mouse/touchpad click
+### To enable mouse/touchpad click
 ```sh
 sudo apt install xserver-xorg-input-synaptics xinput
 sudo apt install xserver-xorg-input-libinput
@@ -53,4 +53,12 @@ Section "InputClass"
     Option "NaturalScrolling" "true"  # Set to "false" to disable
     Option "AccelSpeed" "0.5"          # Adjust between -1 and 1
 EndSection
+```
+
+### To setup gdb
+
+```sh
+git clone https://github.com/apogiatzis/gdb-peda-pwndbg-gef.git
+cd gdb-peda-pwndbg-gef
+./install.sh
 ```
