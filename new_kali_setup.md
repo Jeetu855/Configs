@@ -21,17 +21,17 @@ libinput Accel Speed
 If your device id is 9, to enable touch do
 ```sh
 xinput set-prop 9 "libinput Tapping Enabled" 1
-xinput set-prop 11 "libinput Click Method Enabled" 1 0
+xinput set-prop 9 "libinput Click Method Enabled" 1 0
 ```
 
 To enable natural scrolling do
 ```sh
-xinput set-prop 11 "libinput Natural Scrolling Enabled" 1
+xinput set-prop 9 "libinput Natural Scrolling Enabled" 1
 ```
 
 To adjust pointer speed do
 ```sh
-xinput set-prop 11 "libinput Accel Speed" 0.5
+xinput set-prop 9 "libinput Accel Speed" 0.5
 ```
 
 
