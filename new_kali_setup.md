@@ -90,3 +90,15 @@ Then do
 ```sh
 ./setup.sh
 ```
+
+### Setup zoxide 
+
+
+```sh
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+```
+
+Add the following line at the end of `~/.zshrc`
+```sh
+eval "$(zoxide init zsh)"
+```
