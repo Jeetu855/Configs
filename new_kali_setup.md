@@ -1,3 +1,9 @@
+### First thing
+
+```sh
+sudo apt update && sudo apt upgrade -y
+```
+
 ### To enable mouse/touchpad click
 ```sh
 sudo apt install xserver-xorg-input-synaptics xinput
