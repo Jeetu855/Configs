@@ -62,3 +62,31 @@ git clone https://github.com/apogiatzis/gdb-peda-pwndbg-gef.git
 cd gdb-peda-pwndbg-gef
 ./install.sh
 ```
+
+This setup doesnt setup pwndbg correctly, go into ~/pwndbg
+open `setup.sh` in an editor and replace 
+
+```sh
+PYVER=$(gdb -batch -q --nx -ex 'pi import platform; print(".".join(platform.python_version_tuple()[:2]))')
+PYTHON+=$(gdb -batch -q --nx -ex 'pi import sys; print(sys.executable)')
+
+if ! osx; then
+    PYTHON+="${PYVER}"
+fi
+```
+
+with
+
+```sh
+PYVER=$(gdb -batch -q --nx -ex 'pi import platform; print(".".join(platform.python_version_tuple()[:2]))')
+PYTHON=$(gdb -batch -q --nx -ex 'pi import sys; print(sys.executable)')
+
+if ! osx; then
+    PYTHON="${PYTHON}"  # Ensure the Python path is not concatenated with the version
+fi
+```
+
+Then do
+```sh
+./setup.sh
+```
