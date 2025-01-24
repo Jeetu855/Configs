@@ -44,4 +44,10 @@ setxkbmap -option caps:escape_shifted_capslock
 # set wallpaper
 xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/workspace0/last-image -s "/home/kali/Downloads/lofiwallpaper.png" --create -t string
 
-export NLTK_DATA=/home/kali/nltk_data
+# Set pointer speed
+xinput set-prop 9 "libinput Accel Speed" 0.2
+# Enable tapping
+xinput set-prop 9 "libinput Tapping Enabled" 1
+# Enable natural scrolling
+xinput set-prop 9 "libinput Natural Scrolling Enabled" 1
+
