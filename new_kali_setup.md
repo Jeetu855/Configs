@@ -108,3 +108,9 @@ Add the following line at the end of `~/.zshrc`
 ```sh
 eval "$(zoxide init zsh)"
 ```
+
+For clipboard integration in tmux
+```sh
+# Required for clipboard integration
+sudo apt-get install xsel  # Debian/Ubuntu
+```
