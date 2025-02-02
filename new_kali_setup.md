@@ -114,3 +114,14 @@ For clipboard integration in tmux
 # Required for clipboard integration
 sudo apt-get install xsel  # Debian/Ubuntu
 ```
+
+Setup rust and cargo
+```sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+Set up pwninit
+
+```sh
+cargo install pwninit
+```
