@@ -117,6 +117,24 @@ sudo apt-get install xsel  # Debian/Ubuntu
 
 Setup rust and cargo
 ```sh
+sudo apt update && sudo apt install libssl-dev pkg-config
+sudo apt update && sudo apt install liblzma-dev pkg-config
+```
+
+In zshrc
+```sh
+# For standard installation paths
+export OPENSSL_DIR=/usr
+export OPENSSL_LIB_DIR=/usr/lib/x86_64-linux-gnu
+export OPENSSL_INCLUDE_DIR=/usr/include/openssl
+
+# For pkg-config detection
+export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig
+
+```
+
+
+```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
